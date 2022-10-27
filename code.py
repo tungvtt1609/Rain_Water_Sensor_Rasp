@@ -81,7 +81,7 @@ def sendNotification(motion):
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
     else:
         bot.sendMessage(chat_id, 'No rain')
-
+        bot.sendMessage(chat_id, str(datetime.datetime.now()))
 
 while True:
     time.sleep(10)
