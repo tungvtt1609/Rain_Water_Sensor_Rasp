@@ -36,7 +36,7 @@ def handle(msg):
         main()
 
 
-bot = telepot.Bot('Your Token Here')
+bot = telepot.Bot('5452453117:AAGgOPQ5cK30rSSOFUo05E72Os08pLh6hok')
 bot.message_loop(handle)
 
 def main():
