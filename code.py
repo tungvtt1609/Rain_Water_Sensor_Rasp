@@ -46,11 +46,18 @@ def main():
 
     if GPIO.input(rain) == 1:
         print("Rain detected")
-        motion = 0
+        motion = 1
         if motionNew != motion:
+            motionNew = motion
             sendNotification(motion)
             ser(motion)
+            
+    elif GPIO.input(rain) == 0:
+        print("No Rain detected")
+        motion = 0
+        if motionNew != motion:
             motionNew = motion
+            ser(motion)
 
 def ser(motion):
     global chat_id
