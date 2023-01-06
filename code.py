@@ -44,24 +44,24 @@ def main():
     global motion
     global motionNew
 
-    if GPIO.input(rain) == 1:
+    if GPIO.input(rain):
         print("Rain detected")
-        motion = 1
+        motion = 0
         if motionNew != motion:
             motionNew = motion
             sendNotification(motion)
             ser(motion)
             
-    elif GPIO.input(rain) == 0:
+    else:
         print("No Rain detected")
-        motion = 0
+        motion = 1
         if motionNew != motion:
             motionNew = motion
             ser(motion)
 
 def ser(motion):
     global chat_id
-    if motion == 1:
+    if motion == 0:
         while duty <= 12:
             servo1.ChangeDutyCycle(duty)
             time.sleep(1)
