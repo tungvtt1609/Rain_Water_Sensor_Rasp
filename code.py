@@ -35,7 +35,6 @@ def handle(msg):
     while True:
         main()
 
-
 bot = telepot.Bot('5452453117:AAGgOPQ5cK30rSSOFUo05E72Os08pLh6hok')
 bot.message_loop(handle)
 
@@ -79,7 +78,6 @@ def ser(motion):
 
     servo1.stop()
     GPIO.cleanup()
-
 
 def sendNotification(motion):
     global chat_id
