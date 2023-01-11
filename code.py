@@ -9,8 +9,8 @@ rain = 18
 servo = 11
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(rain, GPIO.IN)
-GPIO.setup(11, GPIO.OUTPUT)
+GPIO.setup(18, GPIO.IN)
+GPIO.setup(11, GPIO.OUT)
 
 motion = 0
 motionNew = 0
