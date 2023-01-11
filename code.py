@@ -43,9 +43,9 @@ def main():
     global motion
     global motionNew
 
-    if GPIO.input(rain):
+    if GPIO.input(rain) == 1:
         print("Rain detected")
-        motion = 0
+        motion = 1
         if motionNew != motion:
             motionNew = motion
             sendNotification(motion)
@@ -53,7 +53,7 @@ def main():
             
     else:
         print("No Rain detected")
-        motion = 1
+        motion = 0
         if motionNew != motion:
             motionNew = motion
             ser(motion)
